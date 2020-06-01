@@ -21,6 +21,9 @@ body {
 
 .grid {
     /*height: auto;
-    width: auto;
-    /*border: black 1px solid;*/
+    width: auto;*/
+}
+
+.gridAfterHover {
+    background-color: black;
 }
