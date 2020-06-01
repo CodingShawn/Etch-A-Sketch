@@ -16,11 +16,19 @@ function createGrid(width) {
 
 function gridSetUp() {
     const grids = Array.from(document.querySelectorAll('.grid'));
-    grids.forEach(grid => grid.addEventListener('mouseover', gridChangeColor));
+    grids.forEach(grid => grid.addEventListener('mouseover', gridChangeRainbowColor));
 }
 
 function gridChangeColor() {
     this.classList.add('gridAfterHover');
+}
+
+function gridChangeRainbowColor(){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let color = `${r},${g},${b}`;
+    this.style.cssText = `background-color: rgb(${color})`;
 }
 
 resetButton.addEventListener('click', resetSketchbox);
