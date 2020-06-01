@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     height: 100%;
     width: 100%;
@@ -8,6 +9,11 @@ body {
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 1fr auto 1fr;
     margin: 0px;
+}
+
+#title {
+    font-size: 70px;
+    margin-bottom: 30px;
 }
 
 #sketchbox {
@@ -30,8 +36,17 @@ body {
 }
 
 #buttonContainer{
+    display: grid;
     grid-area: 1/2/2/3;
     justify-self: center;
     align-self: end;
     padding: 10px;
+}
+
+#resetButton {
+    width: 100px;
+    height: 25px;
+    justify-self: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
