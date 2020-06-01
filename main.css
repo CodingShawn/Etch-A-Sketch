@@ -20,10 +20,18 @@ body {
 }
 
 .grid {
-    /*height: auto;
-    width: auto;*/
+    height: 100%;
+    width: 100%;
+    border: gray 0.1px dotted;
 }
 
 .gridAfterHover {
     background-color: black;
+}
+
+#buttonContainer{
+    grid-area: 1/2/2/3;
+    justify-self: center;
+    align-self: end;
+    padding: 10px;
 }
