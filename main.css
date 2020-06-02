@@ -12,8 +12,8 @@ body {
 }
 
 #title {
-    font-size: 70px;
-    margin-bottom: 30px;
+    font-size: 75px;
+    margin-bottom: 20px;
 }
 
 #sketchbox {
@@ -30,22 +30,17 @@ body {
     border: gray 0.1px dotted;
 }
 
-.gridAfterHover {
-    background-color: black;
-}
-
 #buttonContainer{
     display: grid;
     grid-area: 1/2/2/3;
     justify-self: center;
     align-self: end;
-    padding: 10px;
+    padding-bottom: 10px;
+    width: 100%;
 }
 
 #resetButton {
     width: 100px;
     height: 25px;
-    justify-self: center;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin: 5px 0px 10px 110px;
 }

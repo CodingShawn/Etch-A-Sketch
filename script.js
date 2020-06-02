@@ -2,6 +2,11 @@ const sketchbox = document.querySelector('#sketchbox');
 const stylesheet = document.styleSheets[0];
 const resetButton = document.getElementById('resetButton')
 
+const blackSelected = document.getElementById('blackGrid');
+const isBlackSelected = blackSelected.addEventListener('click', gridSetUp);
+const randomColorSelected = document.getElementById('randomColorGrid');
+const isRandomColorSelected = randomColorSelected.addEventListener('click', gridSetUp);
+
 function createGrid(width) {
     for (let i = 0; i < width * width; i++) {
         let gridDiv = document.createElement('div');
@@ -15,15 +20,24 @@ function createGrid(width) {
 }
 
 function gridSetUp() {
-    const grids = Array.from(document.querySelectorAll('.grid'));
-    grids.forEach(grid => grid.addEventListener('mouseover', gridChangeRainbowColor));
+    let grids = Array.from(document.querySelectorAll('.grid'));
+    let blackGridSelected = document.getElementById('blackGrid').checked;
+    grids.forEach(grid => {if (blackGridSelected) {
+        grid.removeEventListener('mouseover', gridChangeRandomColor)
+        grid.addEventListener('mouseover', gridChangeColor);
+    } else {
+        grid.removeEventListener('mouseover', gridChangeColor)
+        grid.addEventListener('mouseover', gridChangeRandomColor);
+    }
+    }
+    )
 }
 
 function gridChangeColor() {
-    this.classList.add('gridAfterHover');
+    this.style.cssText = 'background-color : black';
 }
 
-function gridChangeRainbowColor(){
+function gridChangeRandomColor(){
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
